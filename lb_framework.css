@@ -213,6 +213,63 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
 .lbg_white { background-color: #ffffff !important; }
 .lbg_transparent { background-color: transparent !important; }
 
+/* Background Gradients (스타트업 스타일) */
+/* 참고: 그라데이션 배경 위에 글씨가 잘 보이도록 대비(contrast)를 꼭 확인하세요! */
+/* 어두운 그라데이션 위에는 .lbc_white 클래스를 텍스트 요소에 추가해야 할 수 있습니다. */
+
+/* 예시 1: 보라(Purple) → 파랑(Blue) (오른쪽 방향) - 클래식 테크 느낌 */
+.lbg_gradient_purple_blue {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;
+  /* 또는 background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important; */
+  /* background 속성은 이미지를 포함한 여러 배경 관련 속성을 한번에 설정합니다. */
+}
+
+/* 예시 2: 핑크(Pink) → 오렌지(Orange) (오른쪽 방향) - 따뜻하고 활기찬 느낌 */
+.lbg_gradient_pink_orange {
+  background-image: linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%) !important;
+}
+
+/* 예시 3: 청록(Teal) → 초록(Green) (오른쪽 방향) - 신선하고 모던한 느낌 */
+.lbg_gradient_teal_green {
+  background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%) !important;
+}
+
+/* 예시 4: 은은한 회색/하늘색 (아래쪽 방향) - 부드럽고 전문적인 느낌 */
+.lbg_gradient_subtle_gray {
+  background-image: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) !important;
+}
+
+/* 예시 5: 바이올렛/인디고 (대각선 135도) - 역동적인 느낌 */
+.lbg_gradient_diagonal_violet {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* 예시 6: 복숭아/핑크 (대각선 45도) - 밝고 화사한 느낌 */
+.lbg_gradient_diagonal_peach {
+    background-image: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%) !important;
+}
+
+/* 예시 7: 라벤더/핑크 (원형 중앙) - 부드러운 확산 효과 */
+.lbg_gradient_radial_lavender {
+  background-image: radial-gradient(circle, #a18cd1 0%, #fbc2eb 100%) !important;
+}
+
+/* 예시 8: 밝은 파랑 계열 (오른쪽 방향) - 시원한 느낌 (어두울 경우 흰색 글씨 필요) */
+.lbg_gradient_sky_blue {
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%) !important;
+}
+
+/* 예시 9: LeetBible 브랜드 색상 활용 그라데이션 (보라색 중심) */
+.lbg_gradient_brand {
+    /* 브랜드 색상(#962de3)과 유사 계열 또는 보색 조화 */
+    background-image: linear-gradient(to right, #962de3 0%, #a18cd1 100%) !important;
+}
+
+/* 예시 10: 어두운 버전 (흰색 글씨와 사용 권장) */
+.lbg_gradient_dark_tech {
+    background-image: linear-gradient(to right, #1e3c72 0%, #2a5298 100%) !important;
+}
+
 
 /* --- 6. Responsive Styles --- */
 @media (max-width: 768px) { /* 768px 이하 (모바일/태블릿) */
