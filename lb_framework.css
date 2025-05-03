@@ -1,43 +1,24 @@
-/* --- LeetBible Custom CSS Framework (lb_*) --- */
-/* Version: 1.0 */
-/* Base: 1rem = 10px (Assumes html { font-size: 62.5% or 10px; }) */
-/* Goal: Efficiency, Consistency, Reusability for I'mweb Landing Pages */
-
-/* --- 1. Layout --- */
 .lb_container {
-  max-width: 800px; /* 최대 너비 (조정 가능) */
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.6rem; /* 모바일 좌우 여백 */
-  padding-right: 1.6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   width: 100%;
 }
 
-.lb_section {
-  padding-top: 4.8rem; /* 섹션 기본 상단 여백 (lb_py_8) */
-  padding-bottom: 4.8rem; /* 섹션 기본 하단 여백 (lb_py_8) */
-}
-.lb_section:first-child {
-    padding-top: 3.2rem; /* 첫 섹션 상단 여백은 조금 작게 */
-}
-.lb_section:last-child {
-    padding-bottom: 6.4rem; /* 마지막 섹션 하단 여백은 더 크게 */
-}
-
-
-/* --- 2. Base Typography --- */
 .lb_h1, .lb_h2, .lb_h3, .lb_h4, .lb_h5, .lb_h6 {
   font-family: 'SUITE', sans-serif;
   font-weight: 700;
   line-height: 1.4;
   color: #1f1f1f;
-  margin: 0 0 1.6rem 0; /* 기본 하단 여백만 */
+  margin: 0 0 1.6rem 0;
   word-break: keep-all;
 }
 .lb_h1 { font-size: 3.6rem; margin-bottom: 2rem; }
 .lb_h2 { font-size: 2.8rem; }
 .lb_h3 { font-size: 2.2rem; }
-.lb_h4 { font-size: 1.8rem; font-weight: 600;} /* h4는 약간 가늘게 */
+.lb_h4 { font-size: 1.8rem; font-weight: 600;}
 .lb_h5 { font-size: 1.6rem; font-weight: 600;}
 .lb_h6 { font-size: 1.4rem; font-weight: 600;}
 
@@ -47,14 +28,12 @@
   line-height: 1.7;
   color: #333333;
   font-weight: 400;
-  margin: 0 0 1.6rem 0; /* 기본 하단 여백 */
+  margin: 0 0 1.6rem 0;
 }
-/* 마지막 p 태그 하단 마진 제거용 유틸리티 필요 시 추가: .lb_mb_0 */
 p.lb_t:last-child,
-div.lb_t:last-child { /* div에 lb_t 적용 시 */
+div.lb_t:last-child {
     margin-bottom: 0;
 }
-
 
 .lb_t_small { font-size: 1.4rem; line-height: 1.6; color: #555555; }
 .lb_t_caption { font-size: 1.3rem; line-height: 1.5; color: #777777; }
@@ -64,8 +43,6 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
 .lb_t_underline { text-decoration: underline; }
 .lb_t_highlight { background-color: #fff3cd; padding: 0.2rem 0.5rem; border-radius: 0.3rem; color: #856404; margin: 0 0.1rem; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 
-
-/* --- 3. List Styles --- */
 .lb_ul { list-style: none; padding-left: 2rem; margin-bottom: 1.6rem; }
 .lb_ul li { position: relative; padding-left: 1.6rem; margin-bottom: 0.8rem; font-family: 'SUIT', sans-serif; font-size: 1.6rem; line-height: 1.7; color: #333333; }
 .lb_ul li::before { content: '•'; position: absolute; left: 0; top: 0; color: #962de3; font-size: 1.6rem; line-height: 1.7; }
@@ -78,16 +55,12 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
 
 .lb_dl { margin-bottom: 1.6rem; }
 .lb_dt { font-family: 'SUIT', sans-serif; font-weight: 600; font-size: 1.6rem; color: #1f1f1f; margin-bottom: 0.4rem; }
-.lb_dd { font-family: 'SUIT', sans-serif; font-size: 1.5rem; line-height: 1.6; color: #555555; margin-left: 0; margin-bottom: 1rem; } /* 들여쓰기 제거, 필요시 유틸리티(lb_ml_*) 사용 */
-.lb_dl > div:last-child .lb_dd, /* dl > div > dt+dd 구조일 때 */
-.lb_dl > dd:last-of-type { /* dl > dt+dd 구조일 때 */
+.lb_dd { font-family: 'SUIT', sans-serif; font-size: 1.5rem; line-height: 1.6; color: #555555; margin-left: 0; margin-bottom: 1rem; }
+.lb_dl > div:last-child .lb_dd,
+.lb_dl > dd:last-of-type {
     margin-bottom: 0;
 }
 
-
-/* --- 4. Components --- */
-
-/* Buttons */
 .lb_btn { display: inline-block; padding: 1rem 2.4rem; border-radius: 0.8rem; font-family: 'SUIT', sans-serif; font-size: 1.6rem; font-weight: 600; text-align: center; cursor: pointer; text-decoration: none; border: 0.2rem solid transparent; transition: all 0.2s ease; line-height: 1.5; vertical-align: middle; }
 .lb_btn_p { background-color: #962de3; border-color: #962de3; color: #ffffff; }
 .lb_btn_p:hover { background-color: #7a24b5; border-color: #7a24b5; color: #ffffff; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
@@ -97,49 +70,33 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
 .lb_btn_accent:hover { background-color: #e68a00; border-color: #e68a00; color: #ffffff; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 .lb_btn_lg { padding: 1.2rem 3rem; font-size: 1.8rem; }
 .lb_btn_sm { padding: 0.6rem 1.5rem; font-size: 1.4rem; border-radius: 0.6rem; border-width: 1px;}
-.lb_btn_full { display: block; width: 100%; } /* 너비 100% 버튼 */
+.lb_btn_full { display: block; width: 100%; }
 
-/* Cards */
 .lb_card { display: block; background-color: #ffffff; border-radius: 1rem; padding: 2.4rem; margin-bottom: 2rem; box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.08); overflow: hidden; }
 .lb_card_dark { background-color: #2a2a2e; color: #e1e1e1; }
 .lb_card_dark .lb_h1, .lb_card_dark .lb_h2, .lb_card_dark .lb_h3, .lb_card_dark .lb_h4 { color: #ffffff; }
 .lb_card_dark .lb_t { color: #d1d1d1; }
 .lb_card_dark .lb_t_small, .lb_card_dark .lb_t_caption { color: #aaaaaa; }
 .lb_card_dark .lb_ul li::before, .lb_card_dark .lb_ol li::before { color: #ff9900; }
-.lb_card_flat { box-shadow: none; border: 1px solid #eee; } /* 그림자 없는 카드 */
+.lb_card_flat { box-shadow: none; border: 1px solid #eee; }
 
-/* Highlight Box */
 .lb_highlight_box { border-radius: 0.8rem; padding: 2rem; margin-bottom: 1.6rem; background-color: #f8f9fa; }
 .lb_highlight_box_accent { background-color: #fff3cd; border-left: 0.5rem solid #ff9900; padding-left: 1.5rem;}
 .lb_highlight_box_brand { background-color: rgba(150, 45, 227, 0.05); border-left: 0.5rem solid #962de3; padding-left: 1.5rem;}
-.lb_highlight_box .lb_h4 { margin-top: 0 !important; } /* 박스 내 제목 위 여백 제거 */
+.lb_highlight_box .lb_h4 { margin-top: 0 !important; }
 
-/* Badge */
-.lb_badge {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.4;
-  border-radius: 0.4rem;
-  vertical-align: middle;
-}
+.lb_badge { display: inline-block; padding: 0.3rem 0.8rem; font-size: 1.2rem; font-weight: 600; line-height: 1.4; border-radius: 0.4rem; vertical-align: middle; }
 .lb_badge_brand { background-color: #962de3; color: #ffffff; }
 .lb_badge_accent { background-color: #ff9900; color: #ffffff; }
 .lb_badge_gray { background-color: #e9ecef; color: #495057; }
 
-
-/* --- 5. Utility Classes --- */
-
-/* Display */
 .lb_d_block { display: block !important; }
 .lb_d_inline_block { display: inline-block !important; }
 .lb_d_inline { display: inline !important; }
 .lb_d_flex { display: flex !important; }
-.lb_d_grid { display: grid !important; } /* 기본 Grid (추후 확장 가능) */
+.lb_d_grid { display: grid !important; }
 .lb_d_none { display: none !important; }
 
-/* Flexbox */
 .lb_flex_row { flex-direction: row !important; }
 .lb_flex_col { flex-direction: column !important; }
 .lb_flex_wrap { flex-wrap: wrap !important; }
@@ -154,31 +111,18 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
 .lb_items_end { align-items: flex-end !important; }
 .lb_items_stretch { align-items: stretch !important; }
 .lb_items_baseline { align-items: baseline !important; }
-.lb_flex_grow_1 { flex-grow: 1 !important; } /* 자식 요소에 적용 */
+.lb_flex_grow_1 { flex-grow: 1 !important; }
 
-/* Text Alignment */
 .lb_text_left { text-align: left !important; }
 .lb_text_center { text-align: center !important; }
 .lb_text_right { text-align: right !important; }
 
-/* Border Radius */
 .lb_rounded_none { border-radius: 0 !important; }
-.lb_rounded_sm { border-radius: 0.4rem !important; } /* 4px */
-.lb_rounded_md { border-radius: 0.8rem !important; } /* 8px (기본) */
-.lb_rounded_lg { border-radius: 1.2rem !important; } /* 12px */
-.lb_rounded_xl { border-radius: 1.6rem !important; } /* 16px */
+.lb_rounded_sm { border-radius: 0.4rem !important; }
+.lb_rounded_md { border-radius: 0.8rem !important; }
+.lb_rounded_lg { border-radius: 1.2rem !important; }
+.lb_rounded_xl { border-radius: 1.6rem !important; }
 .lb_rounded_full { border-radius: 9999px !important; }
-
-/* Spacing (Margin & Padding) */
-/* Format: {property}{sides?}_{scale} */
-/* property: m=margin, p=padding */
-/* sides: t=top, b=bottom, l=left, r=right, x=left+right, y=top+bottom, (none)=all */
-/* scale: 0=0, 1=0.4rem, 2=0.8rem, 3=1.2rem, 4=1.6rem, 5=2.0rem, 6=2.4rem, 7=3.2rem, 8=4.0rem, 9=4.8rem, 10=6.4rem, 11=8.0rem, 12=9.6rem */
-/* Example: .lb_mt_4 = margin-top: 1.6rem; .lb_px_6 = padding-left: 2.4rem; padding-right: 2.4rem; */
-
-/* --- Spacing Scale --- */
-/* 0: 0    | 1: 4px  | 2: 8px  | 3: 12px | 4: 16px | 5: 20px */
-/* 6: 24px | 7: 32px | 8: 40px | 9: 48px | 10: 64px | 11: 80px | 12: 96px */
 
 .lb_m_0 { margin: 0 !important; } .lb_m_1 { margin: 0.4rem !important; } .lb_m_2 { margin: 0.8rem !important; } .lb_m_3 { margin: 1.2rem !important; } .lb_m_4 { margin: 1.6rem !important; } .lb_m_5 { margin: 2.0rem !important; } .lb_m_6 { margin: 2.4rem !important; } .lb_m_7 { margin: 3.2rem !important; } .lb_m_8 { margin: 4.0rem !important; } .lb_m_9 { margin: 4.8rem !important; } .lb_m_10 { margin: 6.4rem !important; } .lb_m_11 { margin: 8.0rem !important; } .lb_m_12 { margin: 9.6rem !important; }
 .lb_mt_0 { margin-top: 0 !important; } .lb_mt_1 { margin-top: 0.4rem !important; } .lb_mt_2 { margin-top: 0.8rem !important; } .lb_mt_3 { margin-top: 1.2rem !important; } .lb_mt_4 { margin-top: 1.6rem !important; } .lb_mt_5 { margin-top: 2.0rem !important; } .lb_mt_6 { margin-top: 2.4rem !important; } .lb_mt_7 { margin-top: 3.2rem !important; } .lb_mt_8 { margin-top: 4.0rem !important; } .lb_mt_9 { margin-top: 4.8rem !important; } .lb_mt_10 { margin-top: 6.4rem !important; } .lb_mt_11 { margin-top: 8.0rem !important; } .lb_mt_12 { margin-top: 9.6rem !important; }
@@ -196,15 +140,14 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
 .lb_px_0 { padding-left: 0 !important; padding-right: 0 !important; } .lb_px_1 { padding-left: 0.4rem !important; padding-right: 0.4rem !important; } .lb_px_2 { padding-left: 0.8rem !important; padding-right: 0.8rem !important; } .lb_px_3 { padding-left: 1.2rem !important; padding-right: 1.2rem !important; } .lb_px_4 { padding-left: 1.6rem !important; padding-right: 1.6rem !important; } .lb_px_5 { padding-left: 2.0rem !important; padding-right: 2.0rem !important; } .lb_px_6 { padding-left: 2.4rem !important; padding-right: 2.4rem !important; } .lb_px_7 { padding-left: 3.2rem !important; padding-right: 3.2rem !important; } .lb_px_8 { padding-left: 4.0rem !important; padding-right: 4.0rem !important; } .lb_px_9 { padding-left: 4.8rem !important; padding-right: 4.8rem !important; } .lb_px_10 { padding-left: 6.4rem !important; padding-right: 6.4rem !important; } .lb_px_11 { padding-left: 8.0rem !important; padding-right: 8.0rem !important; } .lb_px_12 { padding-left: 9.6rem !important; padding-right: 9.6rem !important; }
 .lb_py_0 { padding-top: 0 !important; padding-bottom: 0 !important; } .lb_py_1 { padding-top: 0.4rem !important; padding-bottom: 0.4rem !important; } .lb_py_2 { padding-top: 0.8rem !important; padding-bottom: 0.8rem !important; } .lb_py_3 { padding-top: 1.2rem !important; padding-bottom: 1.2rem !important; } .lb_py_4 { padding-top: 1.6rem !important; padding-bottom: 1.6rem !important; } .lb_py_5 { padding-top: 2.0rem !important; padding-bottom: 2.0rem !important; } .lb_py_6 { padding-top: 2.4rem !important; padding-bottom: 2.4rem !important; } .lb_py_7 { padding-top: 3.2rem !important; padding-bottom: 3.2rem !important; } .lb_py_8 { padding-top: 4.0rem !important; padding-bottom: 4.0rem !important; } .lb_py_9 { padding-top: 4.8rem !important; padding-bottom: 4.8rem !important; } .lb_py_10 { padding-top: 6.4rem !important; padding-bottom: 6.4rem !important; } .lb_py_11 { padding-top: 8.0rem !important; padding-bottom: 8.0rem !important; } .lb_py_12 { padding-top: 9.6rem !important; padding-bottom: 9.6rem !important; }
 
-/* Color Utilities */
 .lbc_brand { color: #962de3 !important; }
 .lbc_accent { color: #ff9900 !important; }
 .lbc_dark { color: #1f1f1f !important; }
 .lbc_gray { color: #555555 !important; }
 .lbc_lightgray { color: #777777 !important; }
 .lbc_white { color: #ffffff !important; }
-.lbc_success { color: #28a745 !important; } /* 추가 예시: 성공색 */
-.lbc_danger { color: #dc3545 !important; }  /* 추가 예시: 위험색 */
+.lbc_success { color: #28a745 !important; }
+.lbc_danger { color: #dc3545 !important; }
 
 .lbg_brand { background-color: #962de3 !important; }
 .lbg_accent { background-color: #ff9900 !important; }
@@ -213,81 +156,18 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
 .lbg_white { background-color: #ffffff !important; }
 .lbg_transparent { background-color: transparent !important; }
 
-/* Background Gradients (스타트업 스타일) */
-/* 참고: 그라데이션 배경 위에 글씨가 잘 보이도록 대비(contrast)를 꼭 확인하세요! */
-/* 어두운 그라데이션 위에는 .lbc_white 클래스를 텍스트 요소에 추가해야 할 수 있습니다. */
+.lbg_gradient_purple_blue { background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important; }
+.lbg_gradient_pink_orange { background-image: linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%) !important; }
+.lbg_gradient_teal_green { background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%) !important; }
+.lbg_gradient_subtle_gray { background-image: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) !important; }
+.lbg_gradient_diagonal_violet { background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; }
+.lbg_gradient_diagonal_peach { background-image: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%) !important; }
+.lbg_gradient_radial_lavender { background-image: radial-gradient(circle, #a18cd1 0%, #fbc2eb 100%) !important; }
+.lbg_gradient_sky_blue { background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%) !important; }
+.lbg_gradient_brand { background-image: linear-gradient(to right, #962de3 0%, #a18cd1 100%) !important; }
+.lbg_gradient_dark_tech { background-image: linear-gradient(to right, #1e3c72 0%, #2a5298 100%) !important; }
 
-/* 예시 1: 보라(Purple) → 파랑(Blue) (오른쪽 방향) - 클래식 테크 느낌 */
-.lbg_gradient_purple_blue {
-  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important;
-  /* 또는 background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%) !important; */
-  /* background 속성은 이미지를 포함한 여러 배경 관련 속성을 한번에 설정합니다. */
-}
-
-/* 예시 2: 핑크(Pink) → 오렌지(Orange) (오른쪽 방향) - 따뜻하고 활기찬 느낌 */
-.lbg_gradient_pink_orange {
-  background-image: linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%) !important;
-}
-
-/* 예시 3: 청록(Teal) → 초록(Green) (오른쪽 방향) - 신선하고 모던한 느낌 */
-.lbg_gradient_teal_green {
-  background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%) !important;
-}
-
-/* 예시 4: 은은한 회색/하늘색 (아래쪽 방향) - 부드럽고 전문적인 느낌 */
-.lbg_gradient_subtle_gray {
-  background-image: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) !important;
-}
-
-/* 예시 5: 바이올렛/인디고 (대각선 135도) - 역동적인 느낌 */
-.lbg_gradient_diagonal_violet {
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-}
-
-/* 예시 6: 복숭아/핑크 (대각선 45도) - 밝고 화사한 느낌 */
-.lbg_gradient_diagonal_peach {
-    background-image: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%) !important;
-}
-
-/* 예시 7: 라벤더/핑크 (원형 중앙) - 부드러운 확산 효과 */
-.lbg_gradient_radial_lavender {
-  background-image: radial-gradient(circle, #a18cd1 0%, #fbc2eb 100%) !important;
-}
-
-/* 예시 8: 밝은 파랑 계열 (오른쪽 방향) - 시원한 느낌 (어두울 경우 흰색 글씨 필요) */
-.lbg_gradient_sky_blue {
-    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%) !important;
-}
-
-/* 예시 9: LeetBible 브랜드 색상 활용 그라데이션 (보라색 중심) */
-.lbg_gradient_brand {
-    /* 브랜드 색상(#962de3)과 유사 계열 또는 보색 조화 */
-    background-image: linear-gradient(to right, #962de3 0%, #a18cd1 100%) !important;
-}
-
-/* 예시 10: 어두운 버전 (흰색 글씨와 사용 권장) */
-.lbg_gradient_dark_tech {
-    background-image: linear-gradient(to right, #1e3c72 0%, #2a5298 100%) !important;
-}
-
-
-/* --- 6. Responsive Styles --- */
-@media (max-width: 768px) { /* 768px 이하 (모바일/태블릿) */
-
-  .lb_container {
-    padding-left: 2rem; /* 모바일 좌우 여백 증가 */
-    padding-right: 2rem;
-  }
-
-  .lb_section {
-    padding-top: 3.2rem; /* 섹션 상하 여백 축소 */
-    padding-bottom: 3.2rem;
-  }
-   .lb_section:last-child {
-    padding-bottom: 4.8rem;
-  }
-
-  /* Typography */
+@media (max-width: 768px) {
   .lb_h1 { font-size: 2.8rem; margin-bottom: 1.6rem; }
   .lb_h2 { font-size: 2.2rem; }
   .lb_h3 { font-size: 1.8rem; }
@@ -299,18 +179,13 @@ div.lb_t:last-child { /* div에 lb_t 적용 시 */
   .lb_t_caption { font-size: 1.2rem; }
   .lb_t_lead { font-size: 1.6rem; }
 
-  /* Lists */
   .lb_ul li, .lb_ol li { font-size: 1.5rem; }
   .lb_ul li::before, .lb_ol li::before { font-size: 1.5rem; line-height: 1.7; }
   .lb_dd { font-size: 1.4rem; }
 
-  /* Components */
   .lb_btn { padding: 0.9rem 2rem; font-size: 1.5rem; }
   .lb_btn_lg { padding: 1rem 2.5rem; font-size: 1.6rem; }
   .lb_btn_sm { padding: 0.5rem 1.2rem; font-size: 1.3rem; }
   .lb_card { padding: 2rem; }
   .lb_highlight_box { padding: 1.5rem; }
-
-  /* Flexbox (필요시 모바일용 flex-direction 변경 등 추가) */
-  /* 예: .lb_flex_col_mobile { flex-direction: column !important; } */
 }
