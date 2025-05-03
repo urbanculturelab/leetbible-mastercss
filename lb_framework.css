@@ -1,0 +1,259 @@
+/* --- LeetBible Custom CSS Framework (lb_*) --- */
+/* Version: 1.0 */
+/* Base: 1rem = 10px (Assumes html { font-size: 62.5% or 10px; }) */
+/* Goal: Efficiency, Consistency, Reusability for I'mweb Landing Pages */
+
+/* --- 1. Layout --- */
+.lb_container {
+  max-width: 1140px; /* 최대 너비 (조정 가능) */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.6rem; /* 모바일 좌우 여백 */
+  padding-right: 1.6rem;
+  width: 100%;
+}
+
+.lb_section {
+  padding-top: 4.8rem; /* 섹션 기본 상단 여백 (lb_py_8) */
+  padding-bottom: 4.8rem; /* 섹션 기본 하단 여백 (lb_py_8) */
+}
+.lb_section:first-child {
+    padding-top: 3.2rem; /* 첫 섹션 상단 여백은 조금 작게 */
+}
+.lb_section:last-child {
+    padding-bottom: 6.4rem; /* 마지막 섹션 하단 여백은 더 크게 */
+}
+
+
+/* --- 2. Base Typography --- */
+.lb_h1, .lb_h2, .lb_h3, .lb_h4, .lb_h5, .lb_h6 {
+  font-family: 'SUITE', sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1f1f1f;
+  margin: 0 0 1.6rem 0; /* 기본 하단 여백만 */
+  word-break: keep-all;
+}
+.lb_h1 { font-size: 3.6rem; margin-bottom: 2rem; }
+.lb_h2 { font-size: 2.8rem; }
+.lb_h3 { font-size: 2.2rem; }
+.lb_h4 { font-size: 1.8rem; font-weight: 600;} /* h4는 약간 가늘게 */
+.lb_h5 { font-size: 1.6rem; font-weight: 600;}
+.lb_h6 { font-size: 1.4rem; font-weight: 600;}
+
+.lb_t {
+  font-family: 'SUIT', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #333333;
+  font-weight: 400;
+  margin: 0 0 1.6rem 0; /* 기본 하단 여백 */
+}
+/* 마지막 p 태그 하단 마진 제거용 유틸리티 필요 시 추가: .lb_mb_0 */
+p.lb_t:last-child,
+div.lb_t:last-child { /* div에 lb_t 적용 시 */
+    margin-bottom: 0;
+}
+
+
+.lb_t_small { font-size: 1.4rem; line-height: 1.6; color: #555555; }
+.lb_t_caption { font-size: 1.3rem; line-height: 1.5; color: #777777; }
+.lb_t_lead { font-size: 1.8rem; line-height: 1.7; font-weight: 500; }
+.lb_t_bold { font-weight: 700 !important; }
+.lb_t_medium { font-weight: 500 !important; }
+.lb_t_underline { text-decoration: underline; }
+.lb_t_highlight { background-color: #fff3cd; padding: 0.2rem 0.5rem; border-radius: 0.3rem; color: #856404; margin: 0 0.1rem; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+
+/* --- 3. List Styles --- */
+.lb_ul { list-style: none; padding-left: 2rem; margin-bottom: 1.6rem; }
+.lb_ul li { position: relative; padding-left: 1.6rem; margin-bottom: 0.8rem; font-family: 'SUIT', sans-serif; font-size: 1.6rem; line-height: 1.7; color: #333333; }
+.lb_ul li::before { content: '•'; position: absolute; left: 0; top: 0; color: #962de3; font-size: 1.6rem; line-height: 1.7; }
+.lb_ul li:last-child { margin-bottom: 0; }
+
+.lb_ol { list-style: none; counter-reset: lb-counter; padding-left: 2rem; margin-bottom: 1.6rem; }
+.lb_ol li { position: relative; padding-left: 2rem; margin-bottom: 0.8rem; counter-increment: lb-counter; font-family: 'SUIT', sans-serif; font-size: 1.6rem; line-height: 1.7; color: #333333; }
+.lb_ol li::before { content: counter(lb-counter) "."; position: absolute; left: 0; top: 0; color: #962de3; font-weight: 600; font-size: 1.6rem; line-height: 1.7; }
+.lb_ol li:last-child { margin-bottom: 0; }
+
+.lb_dl { margin-bottom: 1.6rem; }
+.lb_dt { font-family: 'SUIT', sans-serif; font-weight: 600; font-size: 1.6rem; color: #1f1f1f; margin-bottom: 0.4rem; }
+.lb_dd { font-family: 'SUIT', sans-serif; font-size: 1.5rem; line-height: 1.6; color: #555555; margin-left: 0; margin-bottom: 1rem; } /* 들여쓰기 제거, 필요시 유틸리티(lb_ml_*) 사용 */
+.lb_dl > div:last-child .lb_dd, /* dl > div > dt+dd 구조일 때 */
+.lb_dl > dd:last-of-type { /* dl > dt+dd 구조일 때 */
+    margin-bottom: 0;
+}
+
+
+/* --- 4. Components --- */
+
+/* Buttons */
+.lb_btn { display: inline-block; padding: 1rem 2.4rem; border-radius: 0.8rem; font-family: 'SUIT', sans-serif; font-size: 1.6rem; font-weight: 600; text-align: center; cursor: pointer; text-decoration: none; border: 0.2rem solid transparent; transition: all 0.2s ease; line-height: 1.5; vertical-align: middle; }
+.lb_btn_p { background-color: #962de3; border-color: #962de3; color: #ffffff; }
+.lb_btn_p:hover { background-color: #7a24b5; border-color: #7a24b5; color: #ffffff; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.lb_btn_s { background-color: transparent; border-color: #962de3; color: #962de3; }
+.lb_btn_s:hover { background-color: rgba(150, 45, 227, 0.1); border-color: #7a24b5; color: #7a24b5; }
+.lb_btn_accent { background-color: #ff9900; border-color: #ff9900; color: #ffffff; }
+.lb_btn_accent:hover { background-color: #e68a00; border-color: #e68a00; color: #ffffff; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.lb_btn_lg { padding: 1.2rem 3rem; font-size: 1.8rem; }
+.lb_btn_sm { padding: 0.6rem 1.5rem; font-size: 1.4rem; border-radius: 0.6rem; border-width: 1px;}
+.lb_btn_full { display: block; width: 100%; } /* 너비 100% 버튼 */
+
+/* Cards */
+.lb_card { display: block; background-color: #ffffff; border-radius: 1rem; padding: 2.4rem; margin-bottom: 2rem; box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.08); overflow: hidden; }
+.lb_card_dark { background-color: #2a2a2e; color: #e1e1e1; }
+.lb_card_dark .lb_h1, .lb_card_dark .lb_h2, .lb_card_dark .lb_h3, .lb_card_dark .lb_h4 { color: #ffffff; }
+.lb_card_dark .lb_t { color: #d1d1d1; }
+.lb_card_dark .lb_t_small, .lb_card_dark .lb_t_caption { color: #aaaaaa; }
+.lb_card_dark .lb_ul li::before, .lb_card_dark .lb_ol li::before { color: #ff9900; }
+.lb_card_flat { box-shadow: none; border: 1px solid #eee; } /* 그림자 없는 카드 */
+
+/* Highlight Box */
+.lb_highlight_box { border-radius: 0.8rem; padding: 2rem; margin-bottom: 1.6rem; background-color: #f8f9fa; }
+.lb_highlight_box_accent { background-color: #fff3cd; border-left: 0.5rem solid #ff9900; padding-left: 1.5rem;}
+.lb_highlight_box_brand { background-color: rgba(150, 45, 227, 0.05); border-left: 0.5rem solid #962de3; padding-left: 1.5rem;}
+.lb_highlight_box .lb_h4 { margin-top: 0 !important; } /* 박스 내 제목 위 여백 제거 */
+
+/* Badge */
+.lb_badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: 0.4rem;
+  vertical-align: middle;
+}
+.lb_badge_brand { background-color: #962de3; color: #ffffff; }
+.lb_badge_accent { background-color: #ff9900; color: #ffffff; }
+.lb_badge_gray { background-color: #e9ecef; color: #495057; }
+
+
+/* --- 5. Utility Classes --- */
+
+/* Display */
+.lb_d_block { display: block !important; }
+.lb_d_inline_block { display: inline-block !important; }
+.lb_d_inline { display: inline !important; }
+.lb_d_flex { display: flex !important; }
+.lb_d_grid { display: grid !important; } /* 기본 Grid (추후 확장 가능) */
+.lb_d_none { display: none !important; }
+
+/* Flexbox */
+.lb_flex_row { flex-direction: row !important; }
+.lb_flex_col { flex-direction: column !important; }
+.lb_flex_wrap { flex-wrap: wrap !important; }
+.lb_flex_nowrap { flex-wrap: nowrap !important; }
+.lb_justify_start { justify-content: flex-start !important; }
+.lb_justify_center { justify-content: center !important; }
+.lb_justify_end { justify-content: flex-end !important; }
+.lb_justify_between { justify-content: space-between !important; }
+.lb_justify_around { justify-content: space-around !important; }
+.lb_items_start { align-items: flex-start !important; }
+.lb_items_center { align-items: center !important; }
+.lb_items_end { align-items: flex-end !important; }
+.lb_items_stretch { align-items: stretch !important; }
+.lb_items_baseline { align-items: baseline !important; }
+.lb_flex_grow_1 { flex-grow: 1 !important; } /* 자식 요소에 적용 */
+
+/* Text Alignment */
+.lb_text_left { text-align: left !important; }
+.lb_text_center { text-align: center !important; }
+.lb_text_right { text-align: right !important; }
+
+/* Border Radius */
+.lb_rounded_none { border-radius: 0 !important; }
+.lb_rounded_sm { border-radius: 0.4rem !important; } /* 4px */
+.lb_rounded_md { border-radius: 0.8rem !important; } /* 8px (기본) */
+.lb_rounded_lg { border-radius: 1.2rem !important; } /* 12px */
+.lb_rounded_xl { border-radius: 1.6rem !important; } /* 16px */
+.lb_rounded_full { border-radius: 9999px !important; }
+
+/* Spacing (Margin & Padding) */
+/* Format: {property}{sides?}_{scale} */
+/* property: m=margin, p=padding */
+/* sides: t=top, b=bottom, l=left, r=right, x=left+right, y=top+bottom, (none)=all */
+/* scale: 0=0, 1=0.4rem, 2=0.8rem, 3=1.2rem, 4=1.6rem, 5=2.0rem, 6=2.4rem, 7=3.2rem, 8=4.0rem, 9=4.8rem, 10=6.4rem, 11=8.0rem, 12=9.6rem */
+/* Example: .lb_mt_4 = margin-top: 1.6rem; .lb_px_6 = padding-left: 2.4rem; padding-right: 2.4rem; */
+
+/* --- Spacing Scale --- */
+/* 0: 0    | 1: 4px  | 2: 8px  | 3: 12px | 4: 16px | 5: 20px */
+/* 6: 24px | 7: 32px | 8: 40px | 9: 48px | 10: 64px | 11: 80px | 12: 96px */
+
+.lb_m_0 { margin: 0 !important; } .lb_m_1 { margin: 0.4rem !important; } .lb_m_2 { margin: 0.8rem !important; } .lb_m_3 { margin: 1.2rem !important; } .lb_m_4 { margin: 1.6rem !important; } .lb_m_5 { margin: 2.0rem !important; } .lb_m_6 { margin: 2.4rem !important; } .lb_m_7 { margin: 3.2rem !important; } .lb_m_8 { margin: 4.0rem !important; } .lb_m_9 { margin: 4.8rem !important; } .lb_m_10 { margin: 6.4rem !important; } .lb_m_11 { margin: 8.0rem !important; } .lb_m_12 { margin: 9.6rem !important; }
+.lb_mt_0 { margin-top: 0 !important; } .lb_mt_1 { margin-top: 0.4rem !important; } .lb_mt_2 { margin-top: 0.8rem !important; } .lb_mt_3 { margin-top: 1.2rem !important; } .lb_mt_4 { margin-top: 1.6rem !important; } .lb_mt_5 { margin-top: 2.0rem !important; } .lb_mt_6 { margin-top: 2.4rem !important; } .lb_mt_7 { margin-top: 3.2rem !important; } .lb_mt_8 { margin-top: 4.0rem !important; } .lb_mt_9 { margin-top: 4.8rem !important; } .lb_mt_10 { margin-top: 6.4rem !important; } .lb_mt_11 { margin-top: 8.0rem !important; } .lb_mt_12 { margin-top: 9.6rem !important; }
+.lb_mb_0 { margin-bottom: 0 !important; } .lb_mb_1 { margin-bottom: 0.4rem !important; } .lb_mb_2 { margin-bottom: 0.8rem !important; } .lb_mb_3 { margin-bottom: 1.2rem !important; } .lb_mb_4 { margin-bottom: 1.6rem !important; } .lb_mb_5 { margin-bottom: 2.0rem !important; } .lb_mb_6 { margin-bottom: 2.4rem !important; } .lb_mb_7 { margin-bottom: 3.2rem !important; } .lb_mb_8 { margin-bottom: 4.0rem !important; } .lb_mb_9 { margin-bottom: 4.8rem !important; } .lb_mb_10 { margin-bottom: 6.4rem !important; } .lb_mb_11 { margin-bottom: 8.0rem !important; } .lb_mb_12 { margin-bottom: 9.6rem !important; }
+.lb_ml_0 { margin-left: 0 !important; } .lb_ml_1 { margin-left: 0.4rem !important; } .lb_ml_2 { margin-left: 0.8rem !important; } .lb_ml_3 { margin-left: 1.2rem !important; } .lb_ml_4 { margin-left: 1.6rem !important; } .lb_ml_5 { margin-left: 2.0rem !important; } .lb_ml_6 { margin-left: 2.4rem !important; } .lb_ml_7 { margin-left: 3.2rem !important; } .lb_ml_8 { margin-left: 4.0rem !important; } .lb_ml_9 { margin-left: 4.8rem !important; } .lb_ml_10 { margin-left: 6.4rem !important; } .lb_ml_11 { margin-left: 8.0rem !important; } .lb_ml_12 { margin-left: 9.6rem !important; }
+.lb_mr_0 { margin-right: 0 !important; } .lb_mr_1 { margin-right: 0.4rem !important; } .lb_mr_2 { margin-right: 0.8rem !important; } .lb_mr_3 { margin-right: 1.2rem !important; } .lb_mr_4 { margin-right: 1.6rem !important; } .lb_mr_5 { margin-right: 2.0rem !important; } .lb_mr_6 { margin-right: 2.4rem !important; } .lb_mr_7 { margin-right: 3.2rem !important; } .lb_mr_8 { margin-right: 4.0rem !important; } .lb_mr_9 { margin-right: 4.8rem !important; } .lb_mr_10 { margin-right: 6.4rem !important; } .lb_mr_11 { margin-right: 8.0rem !important; } .lb_mr_12 { margin-right: 9.6rem !important; }
+.lb_mx_0 { margin-left: 0 !important; margin-right: 0 !important; } .lb_mx_1 { margin-left: 0.4rem !important; margin-right: 0.4rem !important; } .lb_mx_2 { margin-left: 0.8rem !important; margin-right: 0.8rem !important; } .lb_mx_3 { margin-left: 1.2rem !important; margin-right: 1.2rem !important; } .lb_mx_4 { margin-left: 1.6rem !important; margin-right: 1.6rem !important; } .lb_mx_5 { margin-left: 2.0rem !important; margin-right: 2.0rem !important; } .lb_mx_6 { margin-left: 2.4rem !important; margin-right: 2.4rem !important; } .lb_mx_7 { margin-left: 3.2rem !important; margin-right: 3.2rem !important; } .lb_mx_8 { margin-left: 4.0rem !important; margin-right: 4.0rem !important; } .lb_mx_9 { margin-left: 4.8rem !important; margin-right: 4.8rem !important; } .lb_mx_10 { margin-left: 6.4rem !important; margin-right: 6.4rem !important; } .lb_mx_11 { margin-left: 8.0rem !important; margin-right: 8.0rem !important; } .lb_mx_12 { margin-left: 9.6rem !important; margin-right: 9.6rem !important; } .lb_mx_auto { margin-left: auto !important; margin-right: auto !important; }
+.lb_my_0 { margin-top: 0 !important; margin-bottom: 0 !important; } .lb_my_1 { margin-top: 0.4rem !important; margin-bottom: 0.4rem !important; } .lb_my_2 { margin-top: 0.8rem !important; margin-bottom: 0.8rem !important; } .lb_my_3 { margin-top: 1.2rem !important; margin-bottom: 1.2rem !important; } .lb_my_4 { margin-top: 1.6rem !important; margin-bottom: 1.6rem !important; } .lb_my_5 { margin-top: 2.0rem !important; margin-bottom: 2.0rem !important; } .lb_my_6 { margin-top: 2.4rem !important; margin-bottom: 2.4rem !important; } .lb_my_7 { margin-top: 3.2rem !important; margin-bottom: 3.2rem !important; } .lb_my_8 { margin-top: 4.0rem !important; margin-bottom: 4.0rem !important; } .lb_my_9 { margin-top: 4.8rem !important; margin-bottom: 4.8rem !important; } .lb_my_10 { margin-top: 6.4rem !important; margin-bottom: 6.4rem !important; } .lb_my_11 { margin-top: 8.0rem !important; margin-bottom: 8.0rem !important; } .lb_my_12 { margin-top: 9.6rem !important; margin-bottom: 9.6rem !important; }
+
+.lb_p_0 { padding: 0 !important; } .lb_p_1 { padding: 0.4rem !important; } .lb_p_2 { padding: 0.8rem !important; } .lb_p_3 { padding: 1.2rem !important; } .lb_p_4 { padding: 1.6rem !important; } .lb_p_5 { padding: 2.0rem !important; } .lb_p_6 { padding: 2.4rem !important; } .lb_p_7 { padding: 3.2rem !important; } .lb_p_8 { padding: 4.0rem !important; } .lb_p_9 { padding: 4.8rem !important; } .lb_p_10 { padding: 6.4rem !important; } .lb_p_11 { padding: 8.0rem !important; } .lb_p_12 { padding: 9.6rem !important; }
+.lb_pt_0 { padding-top: 0 !important; } .lb_pt_1 { padding-top: 0.4rem !important; } .lb_pt_2 { padding-top: 0.8rem !important; } .lb_pt_3 { padding-top: 1.2rem !important; } .lb_pt_4 { padding-top: 1.6rem !important; } .lb_pt_5 { padding-top: 2.0rem !important; } .lb_pt_6 { padding-top: 2.4rem !important; } .lb_pt_7 { padding-top: 3.2rem !important; } .lb_pt_8 { padding-top: 4.0rem !important; } .lb_pt_9 { padding-top: 4.8rem !important; } .lb_pt_10 { padding-top: 6.4rem !important; } .lb_pt_11 { padding-top: 8.0rem !important; } .lb_pt_12 { padding-top: 9.6rem !important; }
+.lb_pb_0 { padding-bottom: 0 !important; } .lb_pb_1 { padding-bottom: 0.4rem !important; } .lb_pb_2 { padding-bottom: 0.8rem !important; } .lb_pb_3 { padding-bottom: 1.2rem !important; } .lb_pb_4 { padding-bottom: 1.6rem !important; } .lb_pb_5 { padding-bottom: 2.0rem !important; } .lb_pb_6 { padding-bottom: 2.4rem !important; } .lb_pb_7 { padding-bottom: 3.2rem !important; } .lb_pb_8 { padding-bottom: 4.0rem !important; } .lb_pb_9 { padding-bottom: 4.8rem !important; } .lb_pb_10 { padding-bottom: 6.4rem !important; } .lb_pb_11 { padding-bottom: 8.0rem !important; } .lb_pb_12 { padding-bottom: 9.6rem !important; }
+.lb_pl_0 { padding-left: 0 !important; } .lb_pl_1 { padding-left: 0.4rem !important; } .lb_pl_2 { padding-left: 0.8rem !important; } .lb_pl_3 { padding-left: 1.2rem !important; } .lb_pl_4 { padding-left: 1.6rem !important; } .lb_pl_5 { padding-left: 2.0rem !important; } .lb_pl_6 { padding-left: 2.4rem !important; } .lb_pl_7 { padding-left: 3.2rem !important; } .lb_pl_8 { padding-left: 4.0rem !important; } .lb_pl_9 { padding-left: 4.8rem !important; } .lb_pl_10 { padding-left: 6.4rem !important; } .lb_pl_11 { padding-left: 8.0rem !important; } .lb_pl_12 { padding-left: 9.6rem !important; }
+.lb_pr_0 { padding-right: 0 !important; } .lb_pr_1 { padding-right: 0.4rem !important; } .lb_pr_2 { padding-right: 0.8rem !important; } .lb_pr_3 { padding-right: 1.2rem !important; } .lb_pr_4 { padding-right: 1.6rem !important; } .lb_pr_5 { padding-right: 2.0rem !important; } .lb_pr_6 { padding-right: 2.4rem !important; } .lb_pr_7 { padding-right: 3.2rem !important; } .lb_pr_8 { padding-right: 4.0rem !important; } .lb_pr_9 { padding-right: 4.8rem !important; } .lb_pr_10 { padding-right: 6.4rem !important; } .lb_pr_11 { padding-right: 8.0rem !important; } .lb_pr_12 { padding-right: 9.6rem !important; }
+.lb_px_0 { padding-left: 0 !important; padding-right: 0 !important; } .lb_px_1 { padding-left: 0.4rem !important; padding-right: 0.4rem !important; } .lb_px_2 { padding-left: 0.8rem !important; padding-right: 0.8rem !important; } .lb_px_3 { padding-left: 1.2rem !important; padding-right: 1.2rem !important; } .lb_px_4 { padding-left: 1.6rem !important; padding-right: 1.6rem !important; } .lb_px_5 { padding-left: 2.0rem !important; padding-right: 2.0rem !important; } .lb_px_6 { padding-left: 2.4rem !important; padding-right: 2.4rem !important; } .lb_px_7 { padding-left: 3.2rem !important; padding-right: 3.2rem !important; } .lb_px_8 { padding-left: 4.0rem !important; padding-right: 4.0rem !important; } .lb_px_9 { padding-left: 4.8rem !important; padding-right: 4.8rem !important; } .lb_px_10 { padding-left: 6.4rem !important; padding-right: 6.4rem !important; } .lb_px_11 { padding-left: 8.0rem !important; padding-right: 8.0rem !important; } .lb_px_12 { padding-left: 9.6rem !important; padding-right: 9.6rem !important; }
+.lb_py_0 { padding-top: 0 !important; padding-bottom: 0 !important; } .lb_py_1 { padding-top: 0.4rem !important; padding-bottom: 0.4rem !important; } .lb_py_2 { padding-top: 0.8rem !important; padding-bottom: 0.8rem !important; } .lb_py_3 { padding-top: 1.2rem !important; padding-bottom: 1.2rem !important; } .lb_py_4 { padding-top: 1.6rem !important; padding-bottom: 1.6rem !important; } .lb_py_5 { padding-top: 2.0rem !important; padding-bottom: 2.0rem !important; } .lb_py_6 { padding-top: 2.4rem !important; padding-bottom: 2.4rem !important; } .lb_py_7 { padding-top: 3.2rem !important; padding-bottom: 3.2rem !important; } .lb_py_8 { padding-top: 4.0rem !important; padding-bottom: 4.0rem !important; } .lb_py_9 { padding-top: 4.8rem !important; padding-bottom: 4.8rem !important; } .lb_py_10 { padding-top: 6.4rem !important; padding-bottom: 6.4rem !important; } .lb_py_11 { padding-top: 8.0rem !important; padding-bottom: 8.0rem !important; } .lb_py_12 { padding-top: 9.6rem !important; padding-bottom: 9.6rem !important; }
+
+/* Color Utilities */
+.lbc_brand { color: #962de3 !important; }
+.lbc_accent { color: #ff9900 !important; }
+.lbc_dark { color: #1f1f1f !important; }
+.lbc_gray { color: #555555 !important; }
+.lbc_lightgray { color: #777777 !important; }
+.lbc_white { color: #ffffff !important; }
+.lbc_success { color: #28a745 !important; } /* 추가 예시: 성공색 */
+.lbc_danger { color: #dc3545 !important; }  /* 추가 예시: 위험색 */
+
+.lbg_brand { background-color: #962de3 !important; }
+.lbg_accent { background-color: #ff9900 !important; }
+.lbg_dark { background-color: #1f1f1f !important; }
+.lbg_light { background-color: #f8f9fa !important; }
+.lbg_white { background-color: #ffffff !important; }
+.lbg_transparent { background-color: transparent !important; }
+
+
+/* --- 6. Responsive Styles --- */
+@media (max-width: 768px) { /* 768px 이하 (모바일/태블릿) */
+
+  .lb_container {
+    padding-left: 2rem; /* 모바일 좌우 여백 증가 */
+    padding-right: 2rem;
+  }
+
+  .lb_section {
+    padding-top: 3.2rem; /* 섹션 상하 여백 축소 */
+    padding-bottom: 3.2rem;
+  }
+   .lb_section:last-child {
+    padding-bottom: 4.8rem;
+  }
+
+  /* Typography */
+  .lb_h1 { font-size: 2.8rem; margin-bottom: 1.6rem; }
+  .lb_h2 { font-size: 2.2rem; }
+  .lb_h3 { font-size: 1.8rem; }
+  .lb_h4 { font-size: 1.6rem; }
+  .lb_h5 { font-size: 1.5rem; }
+  .lb_h6 { font-size: 1.4rem; }
+  .lb_t { font-size: 1.5rem; margin-bottom: 1.5rem; }
+  .lb_t_small { font-size: 1.3rem; }
+  .lb_t_caption { font-size: 1.2rem; }
+  .lb_t_lead { font-size: 1.6rem; }
+
+  /* Lists */
+  .lb_ul li, .lb_ol li { font-size: 1.5rem; }
+  .lb_ul li::before, .lb_ol li::before { font-size: 1.5rem; line-height: 1.7; }
+  .lb_dd { font-size: 1.4rem; }
+
+  /* Components */
+  .lb_btn { padding: 0.9rem 2rem; font-size: 1.5rem; }
+  .lb_btn_lg { padding: 1rem 2.5rem; font-size: 1.6rem; }
+  .lb_btn_sm { padding: 0.5rem 1.2rem; font-size: 1.3rem; }
+  .lb_card { padding: 2rem; }
+  .lb_highlight_box { padding: 1.5rem; }
+
+  /* Flexbox (필요시 모바일용 flex-direction 변경 등 추가) */
+  /* 예: .lb_flex_col_mobile { flex-direction: column !important; } */
+}
